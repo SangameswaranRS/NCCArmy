@@ -85,11 +85,6 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    protected void onDestroy() {
-        Toast.makeText(getApplicationContext(),"On Destroy method",Toast.LENGTH_LONG).show();
-        changeLoginFlag("0");
-    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -103,6 +98,8 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment).commit();
 
         } else if (id == R.id.nav_gallery) {
+            GrantRevokePermissionFragment fragment=new GrantRevokePermissionFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_main,fragment).commit();
 
         } else if (id == R.id.nav_slideshow) {
 
